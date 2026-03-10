@@ -1030,12 +1030,18 @@
 ------------------------------------------------------------------------
 
 
+
 local scriptURL = "https://raw.githubusercontent.com/Davidfod/EB-DO-DELTA-SCRIPT/refs/heads/main/CYBERNODRY.md"
 
 local success, result = pcall(function()
     return loadstring(game:HttpGet(scriptURL))()
 end)
 
+if not success then
+    warn("Não foi possível carregar o script: " .. tostring(result))
+else
+    print("Script CyberNoDry carregado com sucesso!")
+end
 if not success then
     warn("Não foi possível carregar o script: " .. tostring(result))
 else
